@@ -1,9 +1,15 @@
-var Game = function() {
-  this.setUp = function(_fps, _canvas) {
+class Game {
+  constructor(fps, canvas) {
+    this.fps = fps;
+    this.canvas = canvas;
+    this._setUp();
+  }
 
-  };
+  _setUp() {
 
-  this.start = function() {
+  }
 
-  };
-};
+  start() {
+
+  }
+}
