@@ -12,8 +12,8 @@ class Game {
   start() {
     setInterval(() => {
       this.screen.clear();
-      this.screen.draw();
       this.screen.update();
+      this.screen.draw();
     }, 1000 / this.fps);
   }
 }
