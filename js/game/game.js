@@ -1,19 +1,19 @@
-class Game {
-  constructor(fps, canvas) {
-    this.fps = fps;
-    this.screen = new Screen(canvas);
-    this._setUp();
-  }
+var Game = function(_fps, _canvas) {
+  var
+    _screen,
 
-  _setUp() {
-    this.screen.add(Level.ONE);
-  }
+    _tick = function() {
+      _screen.clear();
+      _screen.update();
+      _screen.draw();
+    };
 
-  start() {
-    setInterval(() => {
-      this.screen.clear();
-      this.screen.update();
-      this.screen.draw();
-    }, 1000 / this.fps);
-  }
-}
+  this.setUp = function() {
+    _screen = new Screen(_canvas);
+    _screen.add(Level.ONE);
+  };
+
+  this.start = function() {
+    setInterval(_tick, 1000 / _fps);
+  };
+};

@@ -1,23 +1,27 @@
-class Screen {
-  constructor(canvas) {
-    this.canvas = canvas;
-    this.context = canvas.getContext('2d');
-    this.objects = [];
-  }
+var Screen = function(_canvas) {
+  var
+    _context = _canvas.getContext('2d'),
+    _objects = [];
 
-  add(object) {
-    this.objects.push(object);
-  }
+  this.add = function(object) {
+    _objects.push(object);
+  };
 
-  clear() {
-    this.objects.forEach(object => object.clear(this.context));
-  }
+  this.clear = function() {
+    _objects.forEach(function(object) {
+      object.clear(_context);
+    });
+  };
 
-  update() {
-    this.objects.forEach(object => object.update());
-  }
+  this.update = function() {
+    _objects.forEach(function(object) {
+      object.update();
+    });
+  };
 
-  draw() {
-    this.objects.forEach(object => object.draw(this.context));
-  }
-}
+  this.draw = function() {
+    _objects.forEach(function(object) {
+      object.draw(_context);
+    });
+  };
+};

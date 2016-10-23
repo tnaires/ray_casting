@@ -1,17 +1,13 @@
-class Level {
-  constructor(levelMatrix) {
-    this.levelMatrix = levelMatrix;
-  }
+var Level = function(_levelMatrix) {
+  this.clear = function(context) {
 
-  clear(context) {
+  };
 
-  }
+  this.update = function() {
 
-  update() {
+  };
 
-  }
+  this.draw = function(context) {
 
-  draw(context) {
-
-  }
-}
+  };
+};
