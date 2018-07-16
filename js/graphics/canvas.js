@@ -1,8 +1,11 @@
 class Canvas {
-  constructor(id) {
+  constructor(id, resolution) {
     this.objects = [];
 
     const canvas = document.getElementById(id);
+    canvas.width = resolution.width;
+    canvas.height = resolution.height;
+
     this.context = canvas.getContext('2d');
   }
 

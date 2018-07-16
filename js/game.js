@@ -3,10 +3,17 @@ const BACKGROUND_CANVAS_ID = 'background';
 const ONE_SECOND = 1000;
 
 class Game {
-  constructor(fps) {
+  constructor(fps, resolution) {
     this.fps = fps;
-    this.foreground = new Canvas(FOREGROUND_CANVAS_ID);
-    this.background = new Canvas(BACKGROUND_CANVAS_ID);
+    this.foreground = new Canvas(FOREGROUND_CANVAS_ID, resolution);
+    this.background = new Canvas(BACKGROUND_CANVAS_ID, resolution);
+
+    this.addForegroundObjects();
+  }
+
+  addForegroundObjects() {
+    const player = new Player(50, 50);
+    this.foreground.add(player);
   }
 
   start() {
