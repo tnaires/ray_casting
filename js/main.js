@@ -1,7 +1,4 @@
-var
-  FPS = 60,
-  canvas = document.getElementById('screen'),
-  game = new Game(FPS, canvas);
+const FPS = 60;
 
-game.setUp();
+const game = new Game(FPS);
 game.start();
